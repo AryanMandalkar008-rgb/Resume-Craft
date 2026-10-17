@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Free resume builder with live preview, professional templates, autosave and print-to-PDF.">
+<title>ResumeCraft — Free Resume Builder</title>
+<style>
+:root{--ink:#172033;--muted:#697386;--line:#e2e7ef;--paper:#fff;--bg:#f4f6fb;--brand:#5b5ce2;--brand2:#7b61ff;--soft:#eeefff;--good:#16845b;--shadow:0 14px 40px rgba(27,38,69,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}button,input,textarea,select{font:inherit}button{cursor:pointer}.topbar{height:70px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 5%;position:sticky;top:0;z-index:20}.brand{display:flex;align-items:center;gap:10px;font-weight:850;font-size:20px;letter-spacing:-.6px}.logo{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,var(--brand),var(--brand2));display:grid;place-items:center;color:#fff;font-weight:900}.brand span em{font-style:normal;color:var(--brand)}.top-actions{display:flex;gap:10px;align-items:center}.btn{border:1px solid var(--line);background:#fff;color:var(--ink);padding:10px 15px;border-radius:10px;font-weight:700;font-size:13px;transition:.18s}.btn:hover{transform:translateY(-1px);box-shadow:0 5px 15px #1c2c5014}.btn.primary{background:var(--brand);border-color:var(--brand);color:#fff}.btn.primary:hover{background:#4849c8}.btn.ghost{background:transparent}.hero{padding:35px 5% 25px;max-width:1500px;margin:auto}.eyebrow{display:inline-flex;align-items:center;gap:7px;color:var(--brand);background:var(--soft);padding:7px 11px;border-radius:100px;font-size:11px;font-weight:850;letter-spacing:.7px;text-transform:uppercase}.hero h1{font-size:clamp(27px,3.4vw,43px);letter-spacing:-1.8px;line-height:1.1;margin:15px 0 8px}.hero p{margin:0;color:var(--muted);font-size:14px;max-width:670px;line-height:1.7}.workspace{display:grid;grid-template-columns:minmax(360px, .95fr) minmax(430px,1.05fr);gap:22px;padding:0 5% 45px;max-width:1500px;margin:auto;align-items:start}.panel{background:#fff;border:1px solid var(--line);border-radius:17px;box-shadow:var(--shadow);overflow:hidden}.panel-head{padding:18px 21px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px}.panel-head h2{font-size:15px;margin:0}.panel-head small{color:var(--muted);font-size:11px}.editor-body{padding:19px 21px 25px}.section{border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden}.section summary{list-style:none;padding:14px 15px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;font-weight:800;background:#fff;cursor:pointer}.section summary::-webkit-details-marker{display:none}.section summary .left{display:flex;align-items:center;gap:10px}.num{display:grid;place-items:center;width:25px;height:25px;border-radius:8px;background:var(--soft);color:var(--brand);font-size:11px}.section summary .arrow{color:#9aa2b2;transition:transform .2s}.section[open] summary{border-bottom:1px solid var(--line);background:#fcfcff}.section[open] summary .arrow{transform:rotate(180deg)}.fields{padding:15px;display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:6px;min-width:0}.field.full{grid-column:1/-1}.field label{font-size:11px;font-weight:750;color:#485267}.field input,.field textarea,.field select{width:100%;border:1px solid #dfe4ed;border-radius:8px;padding:10px 11px;outline:none;background:#fff;color:var(--ink);font-size:12px;min-width:0}.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--brand);box-shadow:0 0 0 3px #5b5ce21a}.field textarea{min-height:76px;resize:vertical;line-height:1.5}.hint{font-size:10px;color:var(--muted);line-height:1.5}.entry{border:1px solid #e6e9f1;border-radius:10px;padding:12px;margin-bottom:10px;background:#fcfcfe}.entry-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:11px;font-weight:800}.remove{border:0;background:#fff0f0;color:#b13a48;border-radius:7px;padding:5px 8px;font-size:10px;font-weight:800}.add{width:100%;border:1px dashed #b9bce9;background:#f8f8ff;color:var(--brand);padding:10px;border-radius:9px;font-size:12px;font-weight:800}.preview-panel{position:sticky;top:88px}.preview-head{padding:15px 17px;display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);flex-wrap:wrap}.preview-title{font-size:13px;font-weight:850}.preview-head .controls{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.preview-head select{max-width:130px;border:1px solid var(--line);border-radius:8px;padding:8px;font-size:11px;background:#fff}.color-pick{width:27px;height:27px;border:2px solid #fff;outline:1px solid var(--line);border-radius:50%;padding:0;background:var(--brand)}.preview-wrap{background:#e9edf5;padding:22px;min-height:700px;overflow:auto}.resume{width:100%;max-width:794px;min-height:1050px;margin:0 auto;background:#fff;box-shadow:0 5px 22px #17203318;padding:42px 45px;color:#202737;font-family:Arial,sans-serif;font-size:10px;line-height:1.5;overflow-wrap:anywhere}.resume-header{border-bottom:2px solid var(--accent,#5b5ce2);padding-bottom:18px;margin-bottom:20px}.resume h1{font-size:29px;line-height:1.15;letter-spacing:-.8px;margin:0 0 7px;color:#172033}.resume .headline{font-size:12px;color:var(--accent,#5b5ce2);font-weight:700;margin-bottom:10px}.contactline{display:flex;flex-wrap:wrap;gap:5px 13px;color:#596275;font-size:9px}.contactline span:not(:empty)::before{content:"";}.resume-section{margin:0 0 16px}.resume-section h2{font-size:11px;text-transform:uppercase;letter-spacing:1.2px;color:var(--accent,#5b5ce2);border-bottom:1px solid #dfe3ed;padding-bottom:5px;margin:0 0 9px}.resume p{margin:0 0 6px}.resume .item{margin:0 0 10px;break-inside:avoid}.item-heading{display:flex;justify-content:space-between;gap:10px;font-size:10px;font-weight:700}.item-sub{color:#626d80;font-style:italic;margin:2px 0 4px;font-size:9px}.resume ul{padding-left:15px;margin:4px 0}.resume li{margin-bottom:3px}.skillsline{line-height:1.8}.pill{display:inline-block;background:#f0f1f8;padding:3px 7px;border-radius:4px;margin:2px 3px 2px 0;font-size:9px}.resume.modern .resume-header{border-bottom:0;background:var(--accent,#5b5ce2);color:#fff;padding:24px;margin:-42px -45px 22px}.resume.modern h1,.resume.modern .headline,.resume.modern .contactline{color:#fff}.resume.modern .resume-section h2{border-bottom:2px solid var(--accent,#5b5ce2)}.resume.classic{font-family:Georgia,serif}.resume.classic .resume-header{text-align:center;border-bottom:1px solid #555}.resume.classic .headline,.resume.classic .resume-section h2{color:#333}.resume.classic .contactline{justify-content:center}.resume.compact{padding:32px 36px;font-size:9px}.resume.compact .resume-header{margin-bottom:13px;padding-bottom:12px}.resume.compact h1{font-size:25px}.resume.compact .resume-section{margin-bottom:10px}.empty{color:#9299a8;font-style:italic}.notice{font-size:11px;color:var(--muted);line-height:1.6;margin-top:12px}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);background:#172033;color:#fff;padding:11px 16px;border-radius:10px;font-size:12px;opacity:0;pointer-events:none;transition:.25s;z-index:40}.toast.show{opacity:1;transform:translate(-50%,0)}.footer{text-align:center;color:#8991a1;font-size:11px;padding:0 20px 28px}.footer strong{color:#586074}
+@media(max-width:1000px){.workspace{grid-template-columns:1fr;padding:0 3% 35px}.hero{padding:28px 3% 22px}.preview-panel{position:static}.preview-wrap{min-height:0}.resume{max-width:760px}.topbar{padding:0 3%}}@media(max-width:560px){.topbar{height:60px}.brand{font-size:17px}.top-actions .btn{padding:8px 9px;font-size:11px}.hero h1{letter-spacing:-1px}.workspace{padding-left:12px;padding-right:12px}.hero{padding-left:15px;padding-right:15px}.editor-body{padding:13px}.panel-head{padding:15px}.fields{grid-template-columns:1fr}.field.full{grid-column:auto}.preview-wrap{padding:8px}.resume{padding:25px 23px;min-height:800px;font-size:9px}.resume h1{font-size:23px}.resume.modern .resume-header{margin:-25px -23px 18px;padding:20px 23px}.resume.compact{padding:22px 20px}.resume.compact .resume-header{margin-bottom:12px}.item-heading{flex-direction:column;gap:0}.preview-head{align-items:flex-start}.preview-head .controls{width:100%}}
+@media print{body{background:#fff}.topbar,.hero,.editor-panel,.preview-head,.footer{display:none!important}.workspace{display:block;padding:0;margin:0;max-width:none}.preview-panel{position:static;border:0;box-shadow:none;border-radius:0}.preview-wrap{padding:0;background:#fff;overflow:visible}.resume{box-shadow:none;margin:0;width:100%;max-width:none;min-height:0;padding:12mm 14mm;font-size:9.5pt;print-color-adjust:exact;-webkit-print-color-adjust:exact}.resume h1{font-size:26pt}.resume-section{break-inside:avoid}.resume.modern .resume-header{margin:-12mm -14mm 8mm;padding:10mm 14mm}.resume.compact{padding:9mm 11mm}.resume.compact .resume-header{margin-bottom:5mm}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><div class="logo">R</div><span>Resume<em>Craft</em></span></div>
+  <div class="top-actions"><button class="btn ghost" id="clearBtn">Clear all</button><button class="btn primary" id="downloadTop">↓ Export PDF</button></div>
+</header>
+<section class="hero">
+  <div class="eyebrow">✦ Free resume builder</div>
+  <h1>Your experience. <span style="color:var(--brand)">Professionally presented.</span></h1>
+  <p>Fill in what applies to you and watch your resume build itself. Add education, work, projects, skills, certifications and more. Your draft autosaves in this browser.</p>
+</section>
+<main class="workspace">
+  <section class="panel editor-panel">
+    <div class="panel-head"><div><h2>Build your resume</h2><small>Complete only the sections relevant to you</small></div><span id="completion" class="eyebrow" style="font-size:10px;padding:6px 9px">0% complete</span></div>
+    <div class="editor-body">
+      <details class="section" open><summary><span class="left"><span class="num">01</span> Personal information</span><span class="arrow">⌄</span></summary><div class="fields">
+        <div class="field"><label>Full name *</label><input data-key="name" placeholder="e.g. Aryan Mandalkar"></div>
+        <div class="field"><label>Professional title / headline</label><input data-key="headline" placeholder="e.g. Computer Engineering Student"></div>
+        <div class="field"><label>Email address</label><input data-key="email" type="email" placeholder="you@example.com"></div>
+        <div class="field"><label>Phone number</label><input data-key="phone" placeholder="+91 98765 43210"></div>
+        <div class="field"><label>City, State, Country</label><input data-key="location" placeholder="Pune, Maharashtra, India"></div>
+        <div class="field"><label>LinkedIn URL</label><input data-key="linkedin" placeholder="linkedin.com/in/yourname"></div>
+        <div class="field"><label>GitHub / portfolio URL</label><input data-key="website" placeholder="github.com/yourname"></div>
+        <div class="field"><label>Other professional link</label><input data-key="otherlink" placeholder="Behance, Kaggle, personal site…"></div>
+        <div class="field full"><label>Professional summary / objective</label><textarea data-key="summary" placeholder="Write 2–4 lines about who you are, your strengths, experience and goals. Focus on what you can contribute."></textarea><span class="hint">Tip: mention your role, strongest skills and the kind of opportunity you are seeking.</span></div>
+      </div></details>
+      <details class="section"><summary><span class="left"><span class="num">02</span> Work experience</span><span class="arrow">⌄</span></summary><div class="fields"><div class="field full"><span class="hint">Include internships, jobs, freelance work, apprenticeships or volunteering. Use action verbs and measurable results when possible.</span></div><div class="field full" id="experienceList"></div><div class="field full"><button class="add" data-add="experience">+ Add experience</button></div></div></details>
+      <details class="section"><summary><span class="left"><span class="num">03</span> Education</span><span class="arrow">⌄</span></summary><div class="fields"><div class="field full" id="educationList"></div><div class="field full"><button class="add" data-add="education">+ Add education</button></div></div></details>
+      <details class="section"><summary><span class="left"><span class="num">04</span> Projects</span><span class="arrow">⌄</span></summary><div class="fields"><div class="field full"><span class="hint">Personal, academic, open-source or freelance projects. Explain what you built, the technologies used and the outcome.</span></div><div class="field full" id="projectsList"></div><div class="field full"><button class="add" data-add="projects">+ Add project</button></div></div></details>
+      <details class="section"><summary><span class="left"><span class="num">05</span> Skills</span><span class="arrow">⌄</span></summary><div class="fields">
+        <div class="field full"><label>Technical / professional skills</label><textarea data-key="skills" placeholder="Python, Java, HTML, CSS, SQL, Django, Excel… (separate with commas)"></textarea></div>
+        <div class="field full"><label>Tools and technologies</label><input data-key="tools" placeholder="Git, GitHub, VS Code, Figma, MS Office…"></div>
+        <div class="field full"><label>Soft skills</label><input data-key="softskills" placeholder="Communication, teamwork, problem solving…"></div>
+        <div class="field full"><label>Languages and proficiency</label><input data-key="languages" placeholder="English (Intermediate), Marathi (Native), Hindi (Fluent)"></div>
+      </div></details>
+      <details class="section"><summary><span class="left"><span class="num">06</span> Certifications & courses</span><span class="arrow">⌄</span></summary><div class="fields"><div class="field full" id="certificationsList"></div><div class="field full"><button class="add" data-add="certifications">+ Add certification</button></div></div></details>
+      <details class="section"><summary><span class="left"><span class="num">07</span> Achievements & awards</span><span class="arrow">⌄</span></summary><div class="fields"><div class="field full"><label>Achievements, awards, scholarships, competition results</label><textarea data-key="achievements" placeholder="One achievement per line. Include the award/recognition, organization and year."></textarea></div></div></details>
+      <details class="section"><summary><span class="left"><span class="num">08</span> Leadership & activities</span><span class="arrow">⌄</span></summary><div class="fields">
+        <div class="field full"><label>Leadership, clubs, volunteering, community work</label><textarea data-key="leadership" placeholder="Role, organization, dates and your contribution."></textarea></div>
+        <div class="field full"><label>Publications, presentations or research</label><textarea data-key="publications" placeholder="Title, conference/journal/event, date and link if relevant."></textarea></div>
+      </div></details>
+      <details class="section"><summary><span class="left"><span class="num">09</span> Additional details</span><span class="arrow">⌄</span></summary><div class="fields">
+        <div class="field full"><label>Interests (optional)</label><input data-key="interests" placeholder="Open-source, robotics, design, reading…"></div>
+        <div class="field full"><label>Professional memberships</label><input data-key="memberships" placeholder="Professional bodies, societies or associations"></div>
+        <div class="field full"><label>References (optional)</label><textarea data-key="references" placeholder="Available upon request, or include a reference only with their permission."></textarea></div>
+        <div class="field full"><label>Other relevant information</label><textarea data-key="other" placeholder="Relevant eligibility, work authorization, licenses or other role-specific information."></textarea></div>
+      </div></details>
+      <p class="notice">Privacy: your entries stay in this browser using local storage. This demo does not upload your information to a server. Avoid including sensitive identifiers such as Aadhaar, PAN, passwords or full home address.</p>
+    </div>
+  </section>
+  <section class="panel preview-panel">
+    <div class="preview-head"><div class="preview-title">Live preview <span style="color:#9aa2b2;font-weight:500">· updates automatically</span></div><div class="controls">
+      <select id="template"><option value="professional">Professional</option><option value="modern">Modern bold</option><option value="classic">Classic</option><option value="compact">Compact</option></select>
+      <input class="color-pick" id="accent" type="color" value="#5b5ce2" title="Choose accent colour" aria-label="Choose accent colour">
+      <button class="btn primary" id="downloadBtn">↓ Export PDF</button>
+    </div></div>
+    <div class="preview-wrap"><article id="resume" class="resume" aria-live="polite"><div class="empty">Your resume preview will appear here…</div></article></div>
+  </section>
+</main>
+<div class="footer">Made for your next opportunity · <strong>ResumeCraft</strong> · Keep it honest, relevant and easy to scan.</div>
+<div class="toast" id="toast"></div>
+<script>
+const STORAGE_KEY='resumecraft-data-v1';
+const fields=[...document.querySelectorAll('[data-key]')];
+const sections={
+ experience:{title:'Experience',fields:[['role','Job title / role'],['company','Company / organization'],['location','Location'],['dates','Start – end date'],['details','Key responsibilities and results (one per line)']]},
+ education:{title:'Education',fields:[['degree','Degree / qualification'],['school','Institution'],['location','Location'],['dates','Start – end / graduation date'],['details','Grade, relevant coursework or activities']]},
+ projects:{title:'Project',fields:[['name','Project name'],['tech','Technologies / tools'],['link','Project link (optional)'],['dates','Date / duration'],['details','What you built and the result (one per line)']]},
+ certifications:{title:'Certification',fields:[['name','Certification / course name'],['issuer','Issuing organization'],['date','Date earned'],['link','Credential URL (optional)']]}
+};
+let data={experience:[],education:[],projects:[],certifications:[]};
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const val=k=>document.querySelector(`[data-key="${k}"]`)?.value.trim()||'';
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+function save(){try{const base={};fields.forEach(f=>base[f.dataset.key]=f.value);base.collections=data;localStorage.setItem(STORAGE_KEY,JSON.stringify(base))}catch(e){}}
+function addEntry(type,entry={}){const spec=sections[type],wrap=document.getElementById(type+'List');const index=data[type].length;data[type].push({...entry});const node=document.createElement('div');node.className='entry';node.dataset.type=type;node.dataset.index=index;
+node.innerHTML=`<div class="entry-top"><span>${spec.title} ${index+1}</span><button type="button" class="remove">Remove</button></div><div class="fields" style="padding:0;border:0">${spec.fields.map(([key,label])=>`<div class="field ${key==='details'?'full':''}"><label>${esc(label)}</label>${key==='details'?`<textarea data-entry="${type}" data-index="${index}" data-field="${key}" placeholder="${esc(label)}">${esc(entry[key]||'')}</textarea>`:`<input data-entry="${type}" data-index="${index}" data-field="${key}" placeholder="${esc(label)}" value="${esc(entry[key]||'')}">`}</div>`).join('')}</div>`;
+node.querySelector('.remove').addEventListener('click',()=>{data[type].splice(index,1);renderEntries(type);save();render()});
+node.querySelectorAll('[data-entry]').forEach(el=>el.addEventListener('input',()=>{data[type][+el.dataset.index][el.dataset.field]=el.value;save();render()}));wrap.appendChild(node)}
+function renderEntries(type){document.getElementById(type+'List').innerHTML='';const entries=[...data[type]];data[type]=[];entries.forEach(e=>addEntry(type,e))}
+function lines(text){return text.split(/\n/).map(x=>x.trim()).filter(Boolean)}
+function bulletText(text){const arr=lines(text);return arr.length?`<ul>${arr.map(x=>`<li>${esc(x.replace(/^[-•]\s*/,''))}</li>`).join('')}</ul>`:''}
+function section(title,body){return body?`<section class="resume-section"><h2>${esc(title)}</h2>${body}</section>`:''}
+function renderList(type){return data[type].map(e=>{
+ if(type==='experience')return `<div class="item"><div class="item-heading"><span>${esc(e.role||'Role')}${e.company?' · '+esc(e.company):''}</span><span>${esc(e.dates||'')}</span></div><div class="item-sub">${[e.location].filter(Boolean).map(esc).join('')}</div>${bulletText(e.details)}</div>`;
+ if(type==='education')return `<div class="item"><div class="item-heading"><span>${esc(e.degree||'Qualification')}</span><span>${esc(e.dates||'')}</span></div><div class="item-sub">${[e.school,e.location].filter(Boolean).map(esc).join(' · ')}</div>${e.details?`<p>${esc(e.details)}</p>`:''}</div>`;
+ if(type==='projects')return `<div class="item"><div class="item-heading"><span>${esc(e.name||'Project')}${e.link?` · <a href="${esc(/^https?:\/\//i.test(e.link)?e.link:'https://'+e.link)}">${esc(e.link)}</a>`:''}</span><span>${esc(e.dates||'')}</span></div>${e.tech?`<div class="item-sub">${esc(e.tech)}</div>`:''}${bulletText(e.details)}</div>`;
+ return `<div class="item"><div class="item-heading"><span>${esc(e.name||'Certification')}</span><span>${esc(e.date||'')}</span></div><div class="item-sub">${[e.issuer,e.link].filter(Boolean).map(esc).join(' · ')}</div></div>`;
+}).join('')}
+function render(){const resume=document.getElementById('resume');resume.className='resume '+document.getElementById('template').value;resume.style.setProperty('--accent',document.getElementById('accent').value);
+const name=val('name')||'Your Name';const contacts=[val('email'),val('phone'),val('location'),val('linkedin'),val('website'),val('otherlink')].filter(Boolean);
+const contactHTML=contacts.map(x=>`<span>${esc(x)}</span>`).join('');
+let out=`<header class="resume-header"><h1>${esc(name)}</h1>${val('headline')?`<div class="headline">${esc(val('headline'))}</div>`:''}<div class="contactline">${contactHTML||'<span>email · phone · location · professional links</span>'}</div></header>`;
+out+=section('Professional summary',val('summary')?`<p>${esc(val('summary')).replace(/\n/g,'<br>')}</p>`:'');
+out+=section('Work experience',renderList('experience'));
+out+=section('Education',renderList('education'));
+out+=section('Projects',renderList('projects'));
+const skills=[['Core skills',val('skills')],['Tools & technologies',val('tools')],['Soft skills',val('softskills')],['Languages',val('languages')]].filter(x=>x[1]);
+out+=section('Skills',skills.map(([label,text])=>`<p><strong>${esc(label)}:</strong> ${esc(text).split(',').map(s=>s.trim()).filter(Boolean).map(s=>`<span class="pill">${esc(s)}</span>`).join('')}</p>`).join(''));
+out+=section('Certifications & courses',renderList('certifications'));
+out+=section('Achievements & awards',bulletText(val('achievements')));
+out+=section('Leadership & activities',bulletText(val('leadership')));
+out+=section('Publications & research',bulletText(val('publications')));
+out+=section('Interests',val('interests')?`<p>${esc(val('interests'))}</p>`:'');
+out+=section('Professional memberships',val('memberships')?`<p>${esc(val('memberships'))}</p>`:'');
+out+=section('References',val('references')?`<p>${esc(val('references')).replace(/\n/g,'<br>')}</p>`:'');
+out+=section('Additional information',val('other')?`<p>${esc(val('other')).replace(/\n/g,'<br>')}</p>`:'');
+resume.innerHTML=out;
+const filled=fields.filter(f=>f.value.trim()).length+Object.values(data).flat().filter(e=>Object.values(e).some(v=>String(v||'').trim())).length;
+document.getElementById('completion').textContent=Math.min(100,Math.round(filled/(fields.length+8)*100))+'% complete';
+}
+fields.forEach(f=>f.addEventListener('input',()=>{save();render()}));
+document.querySelectorAll('[data-add]').forEach(b=>b.addEventListener('click',()=>{addEntry(b.dataset.add);save();render()}));
+document.getElementById('template').addEventListener('change',render);document.getElementById('accent').addEventListener('input',render);
+function exportPDF(){render();window.print()}
+document.getElementById('downloadBtn').addEventListener('click',exportPDF);document.getElementById('downloadTop').addEventListener('click',exportPDF);
+document.getElementById('clearBtn').addEventListener('click',()=>{if(!confirm('Clear all resume details from this browser? This cannot be undone.'))return;fields.forEach(f=>f.value='');Object.keys(data).forEach(k=>{data[k]=[];renderEntries(k)});localStorage.removeItem(STORAGE_KEY);render();toast('All details cleared.')});
+function init(){try{const saved=JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}');fields.forEach(f=>{if(saved[f.dataset.key]!==undefined)f.value=saved[f.dataset.key]});if(saved.collections){Object.keys(data).forEach(k=>{data[k]=[];(saved.collections[k]||[]).forEach(e=>addEntry(k,e))})}}catch(e){}render()}
+init();
+</script>
+</body>
+</html>
